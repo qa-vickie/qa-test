@@ -12,6 +12,6 @@ def first_half (s):
 
    return (s[ 0 : first_half_length]) 
 
-imp = raw_input('Wnter the string here: ')
+imp = raw_input('Enter your string here: ')
 print first_half(imp)
 
