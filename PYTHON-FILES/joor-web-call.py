@@ -1,7 +1,7 @@
 from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
-import time 
-
+import time
 
 
 browser = webdriver.Firefox()
@@ -48,9 +48,16 @@ if elem_confirmation.text == 'Your message has been sent':
 	print 'OK'
 else:
 	print 'Failed'
+	
+elem_logout_menu = browser.find_element_by_class_name('designer_dropdown_name')
+ActionChains(browser).move_to_element (elem_logout_menu).perform ()
+time.sleep(1)
+
+elem_logout_btn = browser.find_element_by_link_text ('Logout')
+elem_logout_btn.click()
+
 
 #time.sleep (60)
 time.sleep (5)
 
 browser.quit()
-
